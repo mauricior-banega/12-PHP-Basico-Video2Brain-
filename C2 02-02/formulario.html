@@ -1,0 +1,35 @@
+<!--
+
+    12-PHP Básico (Video2Brain) - Todos los videos estan en carpeta: DVD/9430830/xxdata
+
+Videos/Temas contenidos del Dashboard: 
+    -Desde 02_02_02 (solo este video)
+
+-En este práctico veremos de crear un formulario (formulario.html) y otro (procesar.php) para justamente administrar los datos cargados en dicho formulario.
+-De esta manera veremos como funcionan ambos archivos en conjunto.
+
+-Veremos el metodo de procesamiento POST y GET.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="procesar.php" method="POST">
+
+        Dime tu nombre <input type="text" name="nombre">
+
+        <br>
+
+        Dime tu apellido <input type="text" name="apellido">
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>
