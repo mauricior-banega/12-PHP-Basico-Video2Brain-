@@ -1,0 +1,4 @@
+-Comenzamos abriendo phpmyAdmin, posteriormente creamos usuario nuevo. Para hacerlo en el panel, tocamos en Cuentas de usuarios, de damos el nombre en este caso "video2brain", Nombre del Host:localhost y contraseña:video2brain, en volver a escribir:video2brain. Luego en Base de datos para la cuenta de usuario, seleccionamos:Crear base de datos con el mismo nombre y otorgar todos los privilegios.
+-Por ultimo en Provilegios globales: Seleccionamos todo.
+
+Video ES_215_03_01_01 hasta ES_215_03_01_12.
