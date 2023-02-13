@@ -12,7 +12,7 @@ if($conexion){echo "<p>La base de datos fue abierta exitosamente</p>";}
 
 //Establecer & Ejecutar la consulta (2 en 1)
 
-$resultado = $conexion->query("SELECT * FROM favoritos WHERE usuario='jocarsa' AND contrasena='jocarsa';"); 
+$resultado = $conexion->query("SELECT * FROM favoritos WHERE usuario='$_SESSION[usuario]' AND contrasena='$_SESSION[contrasena]';"); 
 
 /* OJO, EL WHILE DE LA OTRA MANERA NO ANDA
 -Declarando $resultado y $consulta por separado, y no unificado mediante ->query cuando querramos usar la variable $resultado, el array NO FUNCIONARÁ con ella.
@@ -102,5 +102,73 @@ echo "</table>";
 //Cerramos la conexion
 
 $conexion->close();
+
+
+
+//////////////////SOCIALIZO/////////////////////
+
+/*Este espacio se crea para que podamos en la pagina principal poder visualizar a modo sugerencia las paginas favoritas que los usuarios hayan cargado. Separaremos segun categoria estas sugerencias y es por eso que todo el codigo para no repetir codigo 5 veces (de cada categoria), entonces encapsularemos la misma en una F(). Asi reutilizaremos la funcionalidad las veces que queramos sin redundar y hacer extenso el archivo.
+*/
+
+
+
+function muestraCategoria($damecategoria)
+{
+
+	echo "Algunos lins de la categoria ".$damecategoria." que quizas te puedan interesar";
+
+	$conexion = new SQLite3('favoritos.db');
+
+	$resultado = $conexion->query("SELECT * FROM favoritos WHERE usuario!='$_SESSION[usuario]' AND categoria='$damecategoria' ORDER BY RANDOM() LIMIT 3"); 
+
+	//Para que el usuario registrado no vea el favorito que el mismo tiene definimos WHERE dentro de la consulta del SELECT, idnicando el simbolo != distinto a para el usuario que este registrado osea que tenga la sesion abierta en ese momento. Ademas como mostraremos paginas en recomendacion aleatorias, haremos que concidan en cuanto a la misma categoria, esto se mediante la especificacion  que indicara el AND en el WHERE.
+
+
+	//Establecemos que las paginas favoritas se muestren de manera aletoria y con un maximo de 3.
+
+	//Muestro los resultados. Primero creo una tabla y dentro de ella cargaremos los valores que aloje extrayendolo de la dbo, mediante el while.
+
+	echo "
+
+	<table border=1 width=100%>
+	<tr>
+	<td>Titulo</td>
+	<td>Direccion</td>
+	<td>Categoria</td>
+	<td>Comentario</td>
+	<td>Valoracion</td>
+	</tr>
+
+	";
+
+	$data= array();
+
+	while ($fila = $resultado->fetchArray(1)){
+
+	/*	
+	*/
+
+	echo "<tr>
+			<td>".$fila['titulo']."</td>
+			<td>".$fila['direccion']."</td>
+			<td>".$fila['categoria']."</td>
+			<td>".$fila['comentario']."</td>
+			<td>".$fila['valoracion']."</td>
+		</tr>";
+	}
+
+	echo "</table>";
+
+	$conexion->close();
+
+}
+
+//Aca hacemos las llamadas a cada funcion pasando el parametro de cada uno de las opciones que tiene "categoria".
+
+muestraCategoria("salud");
+muestraCategoria("trabajo");
+muestraCategoria("personal");
+muestraCategoria("hobbie");
+muestraCategoria("otros");
 
 ?>

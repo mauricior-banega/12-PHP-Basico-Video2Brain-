@@ -1,3 +1,10 @@
+<!--Explico que es formulariologin.php.php.php"
+-Aqui veremos la interfaz grafica en estructura HTML de este archivo PHP. Como sabemos PHP soporta este otro lenguaje asique no hay problema con ello.
+-Creamos la imagen SVG que es la que insertaremos al comienzo del documento (estrella).
+-Luego podremos ingresar nuestro usuario y contraseña si somos usuarios mediante el form/inputs que creamos (redirije).
+-Tambien podremos Registrarnos (redirije).
+-Podremos ver por ultimo una tabla en donde veremos las platillas de cada pagina web separada por segmentos una de otra, mediante una tabla.
+-->
 
 <!DOCTYPE HTML>
 <html>

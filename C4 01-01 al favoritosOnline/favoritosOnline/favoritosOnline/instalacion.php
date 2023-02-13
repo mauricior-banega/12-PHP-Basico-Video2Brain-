@@ -159,7 +159,7 @@ contrasena Char(40) Not Null,
 nombre Char(40) Not Null,
 apellido Char(100) Not Null,
 edad Int,
-permisos Int
+permisos Int /*Permisos de Administrador*/
 
 
 );

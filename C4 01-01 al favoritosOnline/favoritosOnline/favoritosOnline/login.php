@@ -2,6 +2,9 @@
 /*
 Explico lo que realiza "login.php"
 -Lo que realiza es captar los datos cargados de usuario y contraseña, creado en este archivo. Y validar o no, las sesiones realizando una comparacion con los usuarios & contraseña coincidente cargados.
+
+ACLARACIONES: 
+(1*) - La variable $permisosenbase, se crea luego de creado varios de los archivos, Video 04-04-09 especificamente. Sucede que cualquier usuario podia ingresar a "gestionusuarios.php" y Eliminar/Actualizar a otros usuarios y solo este es un privilegio del administrador con PERMISO 1. Al permiso 1, para jocarsa unicamente, lo define en el INSERT hecho en archivo "instalacion.php", podremos ver que pasa 1 como ultimo paramentro y este corresponde al permiso.
 */
 
 session_start();
@@ -40,14 +43,14 @@ while ($fila = $resultado->fetchArray(1))
 
 $usuariobasedatos = $fila['usuario'];
 $contrasenabasedatos = $fila['contrasena'];
-$permisosenbase = $fila['permisos'];
+$permisosenbase = $fila['permisos']; //(1*)
 
 if($usuario == $usuariobasedatos & $contrasena == $contrasenabasedatos){
 //Si el resultado es positivo, entonces asignar
 
 $_SESSION['usuario'] = $usuario;
 $_SESSION['contrasena'] = $contrasena;
-$_SESSION['permisos'] = $permisosenbase;
+$_SESSION['permisos'] = $permisosenbase; //(1*)
 
 echo'
 
