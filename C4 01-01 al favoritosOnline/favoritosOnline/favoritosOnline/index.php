@@ -12,17 +12,29 @@ $_SESSION['contrasena'] = "jocarsa";
 
 */
 
+if (isset($_SESSION['usuario'])) /*"isset" Verifica si esta seteada o configurada algo, en este caso la variable $_SESSION 'usuario'. Esto lo hacemos ya quen si esta logueado que derive a principal. Pero sino que pida loguearse.
+Aun no esta creada la posibilidad de deslogueo, por eso iremos a crearla a "principal.php".
+*/
 
+{
+	echo'
+	<html>
+	<head>
+	
+		<meta http-equiv="REFRESH" content="0;url=principal.php">		
+
+	</head>
+</html>
+
+';
+}
 
 echo'
 
 <html>
 	<head>
-		//Cambiamos el URL a formulariologin.php
-		//<meta http-equiv="REFRESH" content="0;url=principal.php">
 
 		<meta http-equiv="REFRESH" content="0;url=formulariologin.php">
-
 
 	</head>
 </html>

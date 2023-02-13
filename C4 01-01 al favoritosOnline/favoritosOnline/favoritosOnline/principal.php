@@ -1,8 +1,19 @@
 <?php
 
-session_start();
+include("log.php"); /*ACLARACION:"Notice en el navegador"
+
+				Notice: session_start(): Ignoring session_start() because a session is already active in E:\Facultad ETCE ETC
+
+-Debido a que traemos mediante include el archivo "log.php", y ese a su vez tiene ya un session_start(); el navegador lo interpreta como que hay un doble session_start(); 
+al ejecutar "principal.php". Es por eso que desactivamos el session_start de este archivo para no redundar.
+*/
+
+//session_start(); 
 
 echo "Tu usuario es: ".$_SESSION['usuario']."<br /> Tu contraseña es: ".$_SESSION['contrasena'];
+
+//Creamos enlace para cierre de sesión
+echo "<br/>Pulsa<a href='unlog.php'>AQUI</a>para cerrar tu sesión</br>";
 
 //Crear conexion
 

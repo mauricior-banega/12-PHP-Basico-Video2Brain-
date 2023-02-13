@@ -151,16 +151,22 @@
 
 				<section id="etiquetas">
 
-				<!--AQUI METERE EL CODIGO PHP-->
+
+
+
+				<!--AQUI METERE EL CODIGO PHP -->
+
+
+
 
 <?php
-
+//Crearemos la posibilidad de ver las paginas favoritas recomedadas cargadas por otros usuarios tambien en "formulariologin.php".
 
 $conexion = new SQLite3('favoritos.db') or die ("Ha sido imposible establecer la conexion");
 
 //OLD 	$conexion = sqlite_open('favoritos.db');
 
-$resultado = $conexion->query("SELECT * FROM favoritos ORDER BY RANDOM() LIMIT 6;"); 
+$resultado = $conexion->query("SELECT * FROM favoritos ORDER BY RANDOM() LIMIT 6;"); //Mostrara 6 resultados random
 
 /*OLD
 $consulta = "SELECT * FROM favoritos ORDER BY RANDOM() LIMIT 6;";
