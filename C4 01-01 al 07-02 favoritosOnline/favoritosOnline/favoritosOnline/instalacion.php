@@ -3,7 +3,7 @@
     12-PHP Básico (Video2Brain) - Todos los videos estan en carpeta: DVD/9430830/xxdata
 
 Videos/Temas contenidos del Dashboard: 
-    -Desde 04_01_01 al ?
+    -Desde 04_01_01 al 04-07-02
 
 -Seguimos aplicando SQLite, en este practico crearemos un gestion de paginas web, donde alojaremos las favoritas "favoritosOnline.php". En el gestionaremos tablas para las paginas/usuarios y logueos.
 
