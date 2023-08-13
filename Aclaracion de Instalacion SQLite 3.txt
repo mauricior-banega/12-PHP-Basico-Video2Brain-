@@ -1,0 +1,22 @@
+-Ya viene instalado en versiones de PHP 5.3.0 y posteriores.
+-Pero aun asi no se ejecutaba; esto es lo que debe de realizarse.
+-Se debe buscar en XAMPP la carpeta php. Luego buscar el archivo php.ini, pero que sucede, está pero en la carpeta veremos SIN el .ini. Sucede que hay uno que es php.ini pero como la configuracion de la carpeta no muestra el tipo de archivo que es cada documento es que no se ve.
+-Entonces el que dice php solo es el php.ini;entendiendo esto descomentamos donde dice:
+
+			;extension=pdo_sqlite
+
+-Se descomenta quitandole el (;).
+-Guardamos el archivo y listo.
+
+-Reiniciamos Apache o apagamos interruptores prendidos en XAMMP y listo.
+-Todos los archivos php que contengan codificacion Sqlite3 funcionaran.
+
+------------------
+
+ACLARACION IMPORTANTE:
+
+-Si llegase a haber alguna falla apartir de ahora en PHP puede deberse a que:
+
+1-Cambie el nombre que decia php.ini-development en carpeta php. Le borre porque en otros tutoriales decia que debia de hacerse. Luego volvi a ponerlo pero saco el tipo de archivo DEVELOPMENT que decia en Tipo.
+
+2-Quite todos los comentarios donde aparecia ;pdo_sqlite tanto en php.ini-development como en php.ini-production.
